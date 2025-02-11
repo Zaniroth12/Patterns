@@ -18,7 +18,19 @@ export function multiply(num1, num2) {
  * @returns {string} "Who would you like to vote for?" if `age` is 18 or older
  */
 export function vote(age) {
-  // TODO
+ const ageInvalid = "Age not valid.";
+  if (typeof age !== "number") {
+    return ageInvalid;
+  }
+
+  const underage = "You must be 18 or older to vote.";
+  if (typeof age < 18) {
+    return underage;
+  }
+
+  const voterChoice = "Who would you like to vote for?";
+  
+  return voterChoice;
 }
 
 /**
@@ -28,5 +40,9 @@ export function vote(age) {
  * @returns `undefined` if either argument is not a string
  */
 export function concatenateStrings(str1, str2) {
-  // TODO
+  if (typeof str1 !== String || typeof str2 !== String) {
+    return undefined;
+  }
+
+  return (str1 + str2);
 }
